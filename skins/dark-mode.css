@@ -1,0 +1,445 @@
+/*
+ * AO3 Dark Mode Theme
+ *
+ * A comfortable dark theme for late-night reading
+ * Easy on the eyes with reduced blue light
+ */
+
+/* ========================================
+   Dark Mode Variables
+   ======================================== */
+
+:root {
+  /* Dark Color Scheme */
+  --primary-color: #dc3545;
+  --secondary-color: #a0a0a0;
+  --accent-color: #6ab0d4;
+  --background-color: #1a1a1a;
+  --background-secondary: #2d2d2d;
+  --background-elevated: #363636;
+  --text-color: #e0e0e0;
+  --text-muted: #b0b0b0;
+  --link-color: #ff6b6b;
+  --link-hover-color: #ff8787;
+  --border-color: #404040;
+
+  /* Typography - Slightly larger for dark mode readability */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.7;
+
+  /* Layout */
+  --max-width: 1200px;
+  --border-radius: 6px;
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 24px;
+}
+
+/* ========================================
+   Global Dark Mode Styles
+   ======================================== */
+
+body {
+  font-family: var(--font-body) !important;
+  font-size: var(--font-size-base) !important;
+  line-height: var(--line-height-base) !important;
+  color: var(--text-color) !important;
+  background-color: var(--background-color) !important;
+}
+
+/* Override all white backgrounds */
+#main,
+#inner,
+.splash,
+.announcement,
+.news,
+.module,
+.group,
+.primary,
+.secondary {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Links */
+a {
+  color: var(--link-color) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--link-hover-color) !important;
+  text-decoration: underline !important;
+}
+
+a:visited {
+  color: #d49ac1 !important;
+}
+
+/* ========================================
+   Layout & Container
+   ======================================== */
+
+#main {
+  max-width: var(--max-width) !important;
+  margin: 0 auto !important;
+  padding: var(--spacing-large) !important;
+}
+
+#outer,
+#inner,
+.wrapper {
+  background-color: var(--background-color) !important;
+}
+
+/* ========================================
+   Headers
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading) !important;
+  color: var(--text-color) !important;
+  margin-top: var(--spacing-large) !important;
+  margin-bottom: var(--spacing-medium) !important;
+}
+
+.heading {
+  border-bottom: 2px solid var(--primary-color) !important;
+  padding-bottom: var(--spacing-small) !important;
+  background-color: transparent !important;
+}
+
+/* ========================================
+   Navigation
+   ======================================== */
+
+#header {
+  background-color: var(--background-secondary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+#header .primary {
+  background-color: var(--background-secondary) !important;
+  padding: var(--spacing-medium) !important;
+}
+
+#header .navigation a {
+  color: var(--text-color) !important;
+}
+
+#header .dropdown:hover .menu {
+  background-color: var(--background-elevated) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+#header .dropdown .menu a {
+  color: var(--text-color) !important;
+}
+
+#header .dropdown .menu a:hover {
+  background-color: var(--background-color) !important;
+}
+
+/* ========================================
+   Work Listings
+   ======================================== */
+
+.work.blurb,
+.blurb {
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+  padding: var(--spacing-medium) !important;
+  margin-bottom: var(--spacing-medium) !important;
+  background-color: var(--background-secondary) !important;
+  transition: all 0.2s ease;
+}
+
+.work.blurb:hover,
+.blurb:hover {
+  background-color: var(--background-elevated) !important;
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.work .header h4.heading {
+  font-size: 1.3em !important;
+  border-bottom: none !important;
+  margin-bottom: var(--spacing-small) !important;
+  color: var(--text-color) !important;
+}
+
+.work .required-tags span {
+  background-color: var(--background-elevated) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* Tag Styling */
+.tag,
+.tags a,
+.tags span {
+  background-color: var(--background-elevated) !important;
+  padding: 4px 10px !important;
+  border-radius: 12px !important;
+  font-size: 0.9em !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-color) !important;
+}
+
+.tag:hover,
+.tags a:hover {
+  background-color: var(--background-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
+/* Rating/Warning tags with colors */
+.rating-general-audiences { border-left: 3px solid #4caf50 !important; }
+.rating-teen-and-up { border-left: 3px solid #ffc107 !important; }
+.rating-mature { border-left: 3px solid #ff9800 !important; }
+.rating-explicit { border-left: 3px solid #f44336 !important; }
+
+/* ========================================
+   Reading View (Work Text)
+   ======================================== */
+
+#workskin {
+  font-family: var(--font-body) !important;
+  font-size: 1.1em !important;
+  line-height: 1.8 !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  padding: var(--spacing-large) !important;
+  color: var(--text-color) !important;
+  background-color: var(--background-color) !important;
+}
+
+#chapters {
+  background-color: var(--background-secondary) !important;
+  padding: var(--spacing-large) !important;
+  border-radius: var(--border-radius) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.chapter .userstuff {
+  padding: var(--spacing-large) !important;
+  color: var(--text-color) !important;
+  background-color: var(--background-color) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+.chapter .userstuff p {
+  margin-bottom: 1.2em !important;
+  line-height: 1.8 !important;
+}
+
+/* Preface/Notes */
+.notes,
+.preface {
+  background-color: var(--background-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  padding: var(--spacing-medium) !important;
+  border-radius: var(--border-radius) !important;
+  color: var(--text-muted) !important;
+}
+
+/* ========================================
+   Buttons & Forms
+   ======================================== */
+
+.actions a,
+input[type="submit"],
+input[type="button"],
+button,
+.action {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  padding: 8px 16px !important;
+  border-radius: var(--border-radius) !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease;
+}
+
+.actions a:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover {
+  background-color: var(--link-hover-color) !important;
+  text-decoration: none !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3) !important;
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  background-color: var(--background-elevated) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-color) !important;
+  padding: 8px !important;
+  border-radius: var(--border-radius) !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent-color) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(106, 176, 212, 0.2) !important;
+}
+
+/* ========================================
+   Statistics & Metadata
+   ======================================== */
+
+.stats,
+dl.stats {
+  background-color: var(--background-secondary) !important;
+  padding: var(--spacing-medium) !important;
+  border-radius: var(--border-radius) !important;
+  margin: var(--spacing-medium) 0 !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+dl.stats dt {
+  font-weight: bold !important;
+  color: var(--text-muted) !important;
+}
+
+dl.stats dd {
+  color: var(--text-color) !important;
+}
+
+/* ========================================
+   Comments Section
+   ======================================== */
+
+.comment,
+li.comment {
+  background-color: var(--background-secondary) !important;
+  border-left: 3px solid var(--accent-color) !important;
+  padding: var(--spacing-medium) !important;
+  margin-bottom: var(--spacing-large) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+.comment .userstuff {
+  color: var(--text-color) !important;
+  background-color: transparent !important;
+}
+
+.comment .icon {
+  border-radius: 50% !important;
+  border: 2px solid var(--border-color) !important;
+}
+
+/* ========================================
+   Filters & Sidebar
+   ======================================== */
+
+#sidebar,
+.sidebar {
+  background-color: var(--background-secondary) !important;
+  padding: var(--spacing-medium) !important;
+  border-radius: var(--border-radius) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.filters .group {
+  margin-bottom: var(--spacing-medium) !important;
+  background-color: transparent !important;
+}
+
+.filters dt {
+  color: var(--text-muted) !important;
+  font-weight: bold !important;
+}
+
+.filters dd {
+  color: var(--text-color) !important;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+
+#footer {
+  margin-top: var(--spacing-large) !important;
+  padding: var(--spacing-large) !important;
+  border-top: 1px solid var(--border-color) !important;
+  color: var(--text-muted) !important;
+  background-color: var(--background-secondary) !important;
+}
+
+#footer a {
+  color: var(--link-color) !important;
+}
+
+/* ========================================
+   Miscellaneous
+   ======================================== */
+
+/* Tables */
+table {
+  background-color: var(--background-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+table th {
+  background-color: var(--background-elevated) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+table td {
+  background-color: var(--background-secondary) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* Blockquotes */
+blockquote {
+  background-color: var(--background-secondary) !important;
+  border-left: 4px solid var(--accent-color) !important;
+  padding: var(--spacing-medium) !important;
+  margin: var(--spacing-medium) 0 !important;
+  color: var(--text-muted) !important;
+}
+
+/* Code blocks */
+pre,
+code {
+  background-color: var(--background-elevated) !important;
+  color: #f8f8f2 !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+  padding: 2px 6px !important;
+}
+
+/* Horizontal rules */
+hr {
+  border-color: var(--border-color) !important;
+}
+
+/* Error/Notice messages */
+.error,
+.alert {
+  background-color: rgba(244, 67, 54, 0.1) !important;
+  border: 1px solid #f44336 !important;
+  color: #ff8a80 !important;
+}
+
+.notice {
+  background-color: rgba(255, 193, 7, 0.1) !important;
+  border: 1px solid #ffc107 !important;
+  color: #ffd54f !important;
+}

@@ -1,0 +1,254 @@
+/*
+ * Work Card Component
+ *
+ * Styles for individual work listings on search pages,
+ * bookmarks, and series pages
+ */
+
+/* ========================================
+   Work Card Base Styling
+   ======================================== */
+
+.work.blurb,
+.blurb.work {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.work.blurb:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  border-color: #990000;
+}
+
+/* ========================================
+   Work Header & Title
+   ======================================== */
+
+.work .header {
+  margin-bottom: 12px;
+}
+
+.work .header h4.heading {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  border: none;
+  line-height: 1.3;
+}
+
+.work .header h4.heading a {
+  color: #990000;
+  text-decoration: none;
+}
+
+.work .header h4.heading a:hover {
+  color: #cc0000;
+  text-decoration: underline;
+}
+
+/* Author styling */
+.work .header .heading a[rel="author"] {
+  font-size: 0.9em;
+  color: #666;
+  font-weight: normal;
+}
+
+/* ========================================
+   Required Tags (Rating/Warning/Complete)
+   ======================================== */
+
+.work .required-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.work .required-tags .rating,
+.work .required-tags .warnings,
+.work .required-tags .category,
+.work .required-tags .iswip {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: 600;
+  border: 1px solid;
+}
+
+/* Rating colors */
+.rating-general-audiences {
+  background-color: #e8f5e9;
+  border-color: #4caf50;
+  color: #2e7d32;
+}
+
+.rating-teen-and-up {
+  background-color: #fff9e6;
+  border-color: #ffc107;
+  color: #f57c00;
+}
+
+.rating-mature {
+  background-color: #fff3e0;
+  border-color: #ff9800;
+  color: #e65100;
+}
+
+.rating-explicit {
+  background-color: #ffebee;
+  border-color: #f44336;
+  color: #c62828;
+}
+
+.rating-notrated {
+  background-color: #f5f5f5;
+  border-color: #9e9e9e;
+  color: #616161;
+}
+
+/* ========================================
+   Fandoms
+   ======================================== */
+
+.work .fandoms {
+  margin-bottom: 8px;
+}
+
+.work .fandoms .heading {
+  font-size: 0.9em;
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* ========================================
+   Summary
+   ======================================== */
+
+.work .summary {
+  margin: 12px 0;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border-left: 3px solid #990000;
+  border-radius: 4px;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.work .summary p {
+  margin: 0;
+}
+
+/* ========================================
+   Tags
+   ======================================== */
+
+.work .tags {
+  margin: 12px 0;
+}
+
+.work .tags li {
+  display: inline-block;
+  margin: 0 6px 6px 0;
+}
+
+.work .tags a {
+  display: inline-block;
+  padding: 5px 12px;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  font-size: 0.85em;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.work .tags a:hover {
+  background-color: #e8e8e8;
+  border-color: #990000;
+  color: #990000;
+}
+
+/* Different tag types */
+.work .warnings a {
+  border-left: 3px solid #f44336;
+}
+
+.work .relationships a {
+  border-left: 3px solid #e91e63;
+}
+
+.work .characters a {
+  border-left: 3px solid #9c27b0;
+}
+
+.work .freeforms a {
+  border-left: 3px solid #3f51b5;
+}
+
+/* ========================================
+   Statistics
+   ======================================== */
+
+.work .stats {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.work .stats dt {
+  display: inline;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.work .stats dd {
+  display: inline;
+  margin-right: 16px;
+}
+
+/* Icon styling for stats */
+.work .stats .language::before { content: "🌐 "; }
+.work .stats .words::before { content: "📝 "; }
+.work .stats .chapters::before { content: "📖 "; }
+.work .stats .kudos::before { content: "❤️ "; }
+.work .stats .bookmarks::before { content: "🔖 "; }
+.work .stats .hits::before { content: "👁️ "; }
+
+/* ========================================
+   Series Badge
+   ======================================== */
+
+.work .series {
+  display: inline-block;
+  background-color: #e3f2fd;
+  border: 1px solid #2196f3;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-top: 8px;
+  font-size: 0.85em;
+  color: #1976d2;
+}
+
+.work .series::before {
+  content: "📚 ";
+}
+
+/* ========================================
+   Date Published
+   ======================================== */
+
+.work .datetime {
+  font-size: 0.85em;
+  color: #999;
+  margin-top: 8px;
+}

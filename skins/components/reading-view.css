@@ -1,0 +1,315 @@
+/*
+ * Reading View Component
+ *
+ * Enhanced styles for the work reading experience
+ * Optimized for comfortable long-form reading
+ */
+
+/* ========================================
+   Work Container
+   ======================================== */
+
+#workskin {
+  font-family: 'Georgia', 'Charter', 'Times New Roman', serif;
+  font-size: 1.2em;
+  line-height: 1.8;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 24px;
+  color: #333;
+}
+
+/* ========================================
+   Work Header/Meta
+   ======================================== */
+
+.preface .meta {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.preface .title {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #990000;
+  font-family: 'Georgia', serif;
+}
+
+.preface .byline {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.preface .summary {
+  background-color: #fff;
+  border-left: 4px solid #990000;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 4px;
+}
+
+.preface .summary .heading {
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+/* ========================================
+   Notes (Author's Notes)
+   ======================================== */
+
+.notes {
+  background-color: #fffbf0;
+  border: 1px solid #ffd700;
+  border-radius: 6px;
+  padding: 16px;
+  margin: 24px 0;
+  font-size: 0.95em;
+}
+
+.notes .heading {
+  font-weight: 600;
+  color: #b8860b;
+  margin-bottom: 8px;
+  font-size: 1em;
+}
+
+.notes blockquote {
+  margin: 8px 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+/* ========================================
+   Chapter Navigation
+   ======================================== */
+
+#chapters .navigation,
+.chapter .navigation {
+  background-color: #f5f5f5;
+  padding: 16px;
+  border-radius: 6px;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.chapter .navigation a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #990000;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin: 0 8px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.chapter .navigation a:hover {
+  background-color: #cc0000;
+}
+
+/* ========================================
+   Chapter Content
+   ======================================== */
+
+#chapters {
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.chapter .userstuff {
+  padding: 24px 0;
+}
+
+/* Paragraphs */
+.chapter .userstuff p {
+  margin-bottom: 1.5em;
+  line-height: 1.8;
+  text-align: justify;
+  text-indent: 2em;
+}
+
+/* First paragraph no indent */
+.chapter .userstuff p:first-of-type {
+  text-indent: 0;
+}
+
+/* After scene breaks, no indent */
+.chapter .userstuff hr + p {
+  text-indent: 0;
+}
+
+/* Headers in text */
+.chapter .userstuff h1,
+.chapter .userstuff h2,
+.chapter .userstuff h3 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: #990000;
+  text-align: left;
+  font-family: 'Georgia', serif;
+}
+
+/* ========================================
+   Text Formatting
+   ======================================== */
+
+/* Emphasis */
+.chapter .userstuff em,
+.chapter .userstuff i {
+  font-style: italic;
+}
+
+.chapter .userstuff strong,
+.chapter .userstuff b {
+  font-weight: 700;
+  color: #000;
+}
+
+/* Links in text */
+.chapter .userstuff a {
+  color: #477d99;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.chapter .userstuff a:hover {
+  color: #2c5aa0;
+  text-decoration-style: solid;
+}
+
+/* Blockquotes */
+.chapter .userstuff blockquote {
+  margin: 1.5em 40px;
+  padding: 12px 20px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #ccc;
+  border-radius: 4px;
+  font-style: italic;
+  color: #555;
+}
+
+/* Lists */
+.chapter .userstuff ul,
+.chapter .userstuff ol {
+  margin: 1.5em 0;
+  padding-left: 40px;
+}
+
+.chapter .userstuff li {
+  margin-bottom: 0.5em;
+  line-height: 1.6;
+}
+
+/* ========================================
+   Scene Breaks
+   ======================================== */
+
+.chapter .userstuff hr {
+  border: none;
+  border-top: 3px double #ccc;
+  margin: 2em auto;
+  width: 50%;
+  text-align: center;
+}
+
+/* Decorative scene break */
+.chapter .userstuff hr::after {
+  content: "✦";
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1.2em;
+  padding: 0 0.5em;
+  background: white;
+  color: #999;
+}
+
+/* ========================================
+   Special Formatting
+   ======================================== */
+
+/* Chat/Text messages */
+.chapter .userstuff .message {
+  background-color: #e3f2fd;
+  border-radius: 18px;
+  padding: 8px 16px;
+  margin: 8px 0;
+  max-width: 70%;
+  display: inline-block;
+}
+
+/* Code blocks (if used) */
+.chapter .userstuff pre,
+.chapter .userstuff code {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.chapter .userstuff pre {
+  padding: 16px;
+  overflow-x: auto;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+  #workskin {
+    font-size: 1.1em;
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  #chapters {
+    padding: 16px;
+  }
+
+  .chapter .userstuff p {
+    text-align: left;
+    text-indent: 0;
+  }
+
+  .chapter .userstuff blockquote {
+    margin: 1em 20px;
+  }
+
+  .chapter .navigation a {
+    display: block;
+    margin: 8px 0;
+  }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+  #workskin {
+    font-size: 12pt;
+    max-width: 100%;
+  }
+
+  .chapter .navigation {
+    display: none;
+  }
+
+  .chapter .userstuff p {
+    text-align: left;
+  }
+}

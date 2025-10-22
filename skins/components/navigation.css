@@ -1,0 +1,397 @@
+/*
+ * Navigation Component
+ *
+ * Styles for the main AO3 header navigation and footer
+ */
+
+/* ========================================
+   Main Header
+   ======================================== */
+
+#header {
+  background: linear-gradient(135deg, #900 0%, #a00 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#header .primary {
+  padding: 12px 24px;
+}
+
+/* Logo/Site Title */
+#header h1 {
+  font-size: 1.8em;
+  margin: 0;
+}
+
+#header h1 a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   Navigation Menu
+   ======================================== */
+
+#header .navigation {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#header .navigation li {
+  position: relative;
+  list-style: none;
+}
+
+#header .navigation a {
+  display: block;
+  padding: 10px 16px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+#header .navigation a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+#header .navigation .current {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   Dropdown Menus
+   ======================================== */
+
+#header .dropdown {
+  position: relative;
+}
+
+#header .dropdown:hover .menu {
+  display: block;
+}
+
+#header .dropdown .menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  margin-top: 4px;
+  padding: 8px 0;
+  z-index: 1001;
+}
+
+#header .dropdown .menu li {
+  list-style: none;
+}
+
+#header .dropdown .menu a {
+  color: #333;
+  padding: 10px 20px;
+  display: block;
+  border-radius: 0;
+  font-weight: normal;
+}
+
+#header .dropdown .menu a:hover {
+  background-color: #f5f5f5;
+  color: #990000;
+}
+
+/* Dropdown arrow indicator */
+#header .dropdown > a::after {
+  content: " ▼";
+  font-size: 0.7em;
+  margin-left: 4px;
+}
+
+/* ========================================
+   Search Bar
+   ======================================== */
+
+#header .search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+#header .search input[type="text"] {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.95em;
+  min-width: 200px;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.2s ease;
+}
+
+#header .search input[type="text"]:focus {
+  outline: none;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  min-width: 300px;
+}
+
+#header .search input[type="submit"] {
+  padding: 8px 16px;
+  background-color: white;
+  color: #990000;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#header .search input[type="submit"]:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   User Menu
+   ======================================== */
+
+#header .user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#header .user a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+#header .user .login {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+#header .user .login:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   Breadcrumbs
+   ======================================== */
+
+.breadcrumb {
+  padding: 12px 24px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.9em;
+}
+
+.breadcrumb ul {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb li::after {
+  content: "›";
+  margin-left: 8px;
+  color: #999;
+}
+
+.breadcrumb li:last-child::after {
+  content: "";
+}
+
+.breadcrumb a {
+  color: #990000;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+
+#footer {
+  background-color: #f9f9f9;
+  border-top: 2px solid #e0e0e0;
+  padding: 32px 24px;
+  margin-top: 48px;
+  color: #666;
+}
+
+#footer .group {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#footer h4 {
+  color: #990000;
+  font-size: 1.1em;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+#footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer ul li {
+  margin-bottom: 8px;
+}
+
+#footer a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+#footer a:hover {
+  color: #990000;
+  text-decoration: underline;
+}
+
+/* Footer columns */
+#footer .module {
+  margin-bottom: 24px;
+}
+
+/* Copyright/Legal info */
+#footer .copyright {
+  text-align: center;
+  font-size: 0.85em;
+  color: #999;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ========================================
+   Mobile Navigation
+   ======================================== */
+
+@media (max-width: 768px) {
+  #header .primary {
+    padding: 12px;
+  }
+
+  #header h1 {
+    font-size: 1.4em;
+  }
+
+  #header .navigation {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #header .navigation li {
+    width: 100%;
+  }
+
+  #header .navigation a {
+    padding: 12px;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  #header .search input[type="text"] {
+    min-width: 100%;
+  }
+
+  #header .search input[type="text"]:focus {
+    min-width: 100%;
+  }
+
+  #header .dropdown .menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-top: 0;
+  }
+
+  #header .dropdown .menu a {
+    color: white;
+    padding-left: 32px;
+  }
+
+  .breadcrumb {
+    padding: 8px 12px;
+    font-size: 0.85em;
+  }
+
+  #footer {
+    padding: 24px 12px;
+  }
+}
+
+/* ========================================
+   Accessibility Improvements
+   ======================================== */
+
+/* Skip to content link */
+.skip {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #990000;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip:focus {
+  top: 0;
+}
+
+/* Focus styles */
+#header a:focus,
+#footer a:focus {
+  outline: 3px solid white;
+  outline-offset: 2px;
+}
+
+/* Improved contrast for accessibility */
+@media (prefers-contrast: high) {
+  #header {
+    background: #900;
+  }
+
+  #header .navigation a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  #header .navigation a,
+  #header .search input,
+  #footer a {
+    transition: none;
+  }
+}
