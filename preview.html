@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AO3 Skin Preview</title>
+
+    <!-- Switch between skins by changing the href below -->
+    <!-- Option 1: Light theme -->
+    <!-- <link rel="stylesheet" href="skins/base-theme.css"> -->
+
+    <!-- Option 2: Dark theme -->
+    <link rel="stylesheet" href="skins/dark-mode.css">
+
+    <style>
+        /* Basic AO3 structure styles (these come from AO3 itself) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { margin: 0; padding: 0; }
+        ul { list-style: none; }
+
+        /* Preview controls */
+        .preview-controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            z-index: 10000;
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+        .preview-controls h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .preview-controls button {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .preview-controls button.active {
+            background: #4caf50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preview Theme Switcher -->
+    <div class="preview-controls">
+        <h3>🎨 Preview Mode</h3>
+        <button onclick="switchTheme('base-theme')" id="btn-light">Light Theme</button>
+        <button onclick="switchTheme('dark-mode')" id="btn-dark" class="active">Dark Theme</button>
+        <hr style="margin: 10px 0; border-color: #555;">
+        <small>Close this to see full layout</small>
+    </div>
+
+    <!-- AO3 Header -->
+    <div id="header">
+        <div class="primary">
+            <h1><a href="#">Archive of Our Own</a></h1>
+            <ul class="navigation">
+                <li><a href="#">Fandoms</a></li>
+                <li><a href="#">Browse</a></li>
+                <li class="dropdown">
+                    <a href="#">Search ▼</a>
+                    <ul class="menu">
+                        <li><a href="#">Works</a></li>
+                        <li><a href="#">Bookmarks</a></li>
+                        <li><a href="#">Tags</a></li>
+                        <li><a href="#">People</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumb">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Fandoms</a></li>
+            <li>Harry Potter</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main">
+        <div id="inner">
+            <h2 class="heading">Works in Harry Potter - J. K. Rowling</h2>
+
+            <!-- Work Listing 1 -->
+            <div class="work blurb">
+                <div class="header">
+                    <h4 class="heading">
+                        <a href="#">The Way of the Sword</a>
+                        <a href="#" rel="author">by AuthorName</a>
+                    </h4>
+                </div>
+
+                <div class="required-tags">
+                    <span class="rating rating-teen-and-up">Teen</span>
+                    <span class="warnings">No Warnings</span>
+                    <span class="category">M/M</span>
+                    <span class="iswip">Complete</span>
+                </div>
+
+                <h5 class="fandoms">
+                    <span class="heading">Fandoms:</span>
+                    <a href="#">Harry Potter - J. K. Rowling</a>
+                </h5>
+
+                <div class="summary">
+                    <p>Harry discovers an ancient technique that changes everything. A story of growth, friendship, and the power of determination.</p>
+                </div>
+
+                <ul class="tags">
+                    <li class="relationships"><a href="#">Harry Potter/Draco Malfoy</a></li>
+                    <li class="characters"><a href="#">Harry Potter</a></li>
+                    <li class="characters"><a href="#">Draco Malfoy</a></li>
+                    <li class="characters"><a href="#">Hermione Granger</a></li>
+                    <li class="freeforms"><a href="#">Alternate Universe</a></li>
+                    <li class="freeforms"><a href="#">Hogwarts Eighth Year</a></li>
+                    <li class="freeforms"><a href="#">Slow Burn</a></li>
+                    <li class="freeforms"><a href="#">Happy Ending</a></li>
+                </ul>
+
+                <dl class="stats">
+                    <dt class="words">Words:</dt>
+                    <dd class="words">125,432</dd>
+                    <dt class="chapters">Chapters:</dt>
+                    <dd class="chapters">24/24</dd>
+                    <dt class="kudos">Kudos:</dt>
+                    <dd class="kudos">5,234</dd>
+                    <dt class="bookmarks">Bookmarks:</dt>
+                    <dd class="bookmarks">1,432</dd>
+                    <dt class="hits">Hits:</dt>
+                    <dd class="hits">98,765</dd>
+                </dl>
+            </div>
+
+            <!-- Work Listing 2 -->
+            <div class="work blurb">
+                <div class="header">
+                    <h4 class="heading">
+                        <a href="#">Midnight Conversations</a>
+                        <a href="#" rel="author">by AnotherWriter</a>
+                    </h4>
+                </div>
+
+                <div class="required-tags">
+                    <span class="rating rating-general-audiences">General</span>
+                    <span class="warnings">No Warnings</span>
+                    <span class="category">Gen</span>
+                    <span class="iswip">WIP</span>
+                </div>
+
+                <h5 class="fandoms">
+                    <span class="heading">Fandoms:</span>
+                    <a href="#">Harry Potter - J. K. Rowling</a>
+                </h5>
+
+                <div class="summary">
+                    <p>Late night talks in the common room lead to unexpected friendships and revelations.</p>
+                </div>
+
+                <ul class="tags">
+                    <li class="characters"><a href="#">Harry Potter</a></li>
+                    <li class="characters"><a href="#">Ron Weasley</a></li>
+                    <li class="characters"><a href="#">Hermione Granger</a></li>
+                    <li class="freeforms"><a href="#">Friendship</a></li>
+                    <li class="freeforms"><a href="#">Fluff</a></li>
+                    <li class="freeforms"><a href="#">Character Study</a></li>
+                </ul>
+
+                <dl class="stats">
+                    <dt class="words">Words:</dt>
+                    <dd class="words">45,231</dd>
+                    <dt class="chapters">Chapters:</dt>
+                    <dd class="chapters">12/20</dd>
+                    <dt class="kudos">Kudos:</dt>
+                    <dd class="kudos">892</dd>
+                    <dt class="bookmarks">Bookmarks:</dt>
+                    <dd class="bookmarks">234</dd>
+                    <dt class="hits">Hits:</dt>
+                    <dd class="hits">12,456</dd>
+                </dl>
+            </div>
+
+            <!-- Work Listing 3 -->
+            <div class="work blurb">
+                <div class="header">
+                    <h4 class="heading">
+                        <a href="#">The Price of Magic</a>
+                        <a href="#" rel="author">by DarkWriter</a>
+                    </h4>
+                </div>
+
+                <div class="required-tags">
+                    <span class="rating rating-explicit">Explicit</span>
+                    <span class="warnings">Graphic Violence</span>
+                    <span class="category">Multi</span>
+                    <span class="iswip">Complete</span>
+                </div>
+
+                <h5 class="fandoms">
+                    <span class="heading">Fandoms:</span>
+                    <a href="#">Harry Potter - J. K. Rowling</a>
+                </h5>
+
+                <div class="summary">
+                    <p>Every spell has a cost. Harry learns this the hard way as he delves into forbidden magic to save those he loves.</p>
+                </div>
+
+                <ul class="tags">
+                    <li class="relationships"><a href="#">Harry Potter/Ginny Weasley</a></li>
+                    <li class="characters"><a href="#">Harry Potter</a></li>
+                    <li class="characters"><a href="#">Ginny Weasley</a></li>
+                    <li class="freeforms"><a href="#">Dark Magic</a></li>
+                    <li class="freeforms"><a href="#">Angst</a></li>
+                    <li class="freeforms"><a href="#">Moral Ambiguity</a></li>
+                    <li class="freeforms"><a href="#">Redemption</a></li>
+                </ul>
+
+                <dl class="stats">
+                    <dt class="words">Words:</dt>
+                    <dd class="words">87,654</dd>
+                    <dt class="chapters">Chapters:</dt>
+                    <dd class="chapters">18/18</dd>
+                    <dt class="kudos">Kudos:</dt>
+                    <dd class="kudos">3,421</dd>
+                    <dt class="bookmarks">Bookmarks:</dt>
+                    <dd class="bookmarks">876</dd>
+                    <dt class="hits">Hits:</dt>
+                    <dd class="hits">45,678</dd>
+                </dl>
+            </div>
+
+            <!-- Sample Reading View -->
+            <h2 class="heading" style="margin-top: 48px;">Reading View Preview</h2>
+
+            <div class="preface">
+                <div class="meta">
+                    <h3 class="title">The Way of the Sword</h3>
+                    <div class="byline">by AuthorName</div>
+
+                    <div class="summary">
+                        <div class="heading">Summary:</div>
+                        <p>Harry discovers an ancient technique that changes everything. A story of growth, friendship, and the power of determination.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notes">
+                <div class="heading">Author's Notes:</div>
+                <blockquote>
+                    <p>Thank you so much for reading! This has been a labor of love and I hope you enjoy it. Comments and kudos are always appreciated!</p>
+                </blockquote>
+            </div>
+
+            <div id="chapters">
+                <div class="chapter">
+                    <h3 class="heading">Chapter 1: The Beginning</h3>
+
+                    <div class="userstuff">
+                        <p>The rain fell steadily against the windows of the Gryffindor common room, creating a soothing rhythm that filled the otherwise quiet space. Harry sat curled up in his favorite armchair by the fire, a worn leather-bound book resting in his lap.</p>
+
+                        <p>It had been weeks since the final battle, and Hogwarts was slowly rebuilding—not just the physical structures damaged in the war, but the hearts and spirits of those who remained. The castle felt different now, quieter somehow, as if it too was recovering from old wounds.</p>
+
+                        <p>"Still reading that old thing?" Hermione's voice broke through his thoughts as she settled into the chair across from him, her own stack of books threatening to topple over.</p>
+
+                        <hr>
+
+                        <p>Harry glanced up from the pages, a small smile tugging at his lips. "It's fascinating, actually. Professor McGonagall found it in the restricted section. It talks about ancient magical techniques that have been lost for centuries."</p>
+
+                        <p><strong>"Lost for a reason, probably,"</strong> Ron chimed in, sprawling across the couch with considerably less grace than Hermione had shown. "Nothing good ever comes from the restricted section."</p>
+
+                        <p><em>But Harry wasn't so sure about that.</em> The techniques described in the book weren't dark magic—they were something else entirely. Something that resonated with him in a way he couldn't quite explain.</p>
+
+                        <blockquote>
+                            <p>"The path of true mastery lies not in the spell itself, but in understanding the fundamental nature of magic. Only then can one reshape reality according to their will."</p>
+                        </blockquote>
+
+                        <p>The words seemed to echo in his mind, and Harry found himself reading them over and over again, each time discovering new layers of meaning.</p>
+                    </div>
+
+                    <div class="navigation">
+                        <a href="#">← Previous Chapter</a>
+                        <a href="#">Chapter Index</a>
+                        <a href="#">Next Chapter →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <h3 class="heading" style="margin-top: 48px;">Comments</h3>
+
+            <ul>
+                <li class="comment">
+                    <div class="comment-header">
+                        <strong>ReaderOne</strong> - 2 days ago
+                    </div>
+                    <div class="userstuff">
+                        <p>This is absolutely wonderful! I love how you've characterized Harry's journey here. The pacing is perfect and I can't wait to see where this goes!</p>
+                    </div>
+                </li>
+
+                <li class="comment">
+                    <div class="comment-header">
+                        <strong>BookwormFan</strong> - 5 days ago
+                    </div>
+                    <div class="userstuff">
+                        <p>I've been following this story from the beginning and every chapter gets better. Your writing has such depth!</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <div class="group">
+            <h4>About the Archive</h4>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Wrangling Guidelines</a></li>
+            </ul>
+
+            <div class="copyright">
+                <p>This is a preview of your AO3 skin. Not affiliated with Archive of Our Own.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTheme(theme) {
+            const link = document.querySelector('link[rel="stylesheet"]');
+            link.href = `skins/${theme}.css`;
+
+            // Update button states
+            document.querySelectorAll('.preview-controls button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            if (theme === 'dark-mode') {
+                document.getElementById('btn-dark').classList.add('active');
+            } else {
+                document.getElementById('btn-light').classList.add('active');
+            }
+        }
+
+        // Close preview controls on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const controls = document.querySelector('.preview-controls');
+                controls.style.display = controls.style.display === 'none' ? 'block' : 'none';
+            }
+        });
+    </script>
+</body>
+</html>

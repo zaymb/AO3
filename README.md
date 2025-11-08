@@ -4,6 +4,13 @@ Personal custom CSS styles for Archive of Our Own (AO3).
 
 ## Quick Start
 
+### Preview Locally First! 🎨
+
+**Open `preview.html` in your browser** to see how the skin looks before uploading to AO3!
+- Switch between light and dark themes with the buttons
+- No internet connection needed
+- See all your changes instantly
+
 ### Method 1: AO3 Site Skins (Recommended)
 
 1. Log into your AO3 account
@@ -25,6 +32,9 @@ Personal custom CSS styles for Archive of Our Own (AO3).
 ## Project Structure
 
 ```
+preview.html                  # 👀 Open this in your browser to preview!
+QUICK_START.md               # Fast setup guide
+CUSTOMIZATION_GUIDE.md       # Detailed customization help
 skins/
   ├── base-theme.css          # Main custom theme
   ├── dark-mode.css           # Dark mode variant
